@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DKMA Applications | Bespoke Digital Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* --- RESET & BASE STYLES --- */
+        :root {
+            --color-bg-main: #ffffff;
+            --color-bg-secondary: #f4f7fa;
+            --color-text-primary: #1a202c;
+            --color-text-secondary: #4a5568;
+            --color-accent: #00d2ff; /* Vibrant Teal */
+            --color-deep-blue: #0a2540; /* Dark Navy */
+            --section-spacing: 100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-main);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        p {
+            color: var(--color-text-secondary);
+            font-size: 1.125rem;
+        }
+
+        a {
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: var(--color-deep-blue);
+            box-shadow: 0 4px 14px rgba(0, 210, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 210, 255, 0.6);
+        }
+
+        /* --- HEADER / NAV --- */
+        header {
+            padding: 1.5rem 0;
+            position: absolute;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--color-deep-blue);
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            color: var(--color-text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.1), transparent 50%),
+                        linear-gradient(to bottom, #ffffff, var(--color-bg-secondary));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            color: var(--color-deep-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            margin-bottom: 2.5rem;
+            font-size: 1.25rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        /* Abstract phone shapes for visual interest */
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 600px;
+            background: linear-gradient(45deg, var(--color-accent), #005bea);
+            border-radius: 40px;
+            transform: rotate(-15deg) translate(50px, -50px);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .mockup-container {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transform: rotate(-5deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .mockup-container:hover {
+             transform: rotate(0deg) scale(1.02);
+        }
+
+
+        /* --- SERVICES SECTION --- */
+        #services {
+            padding: var(--color-section-spacing) 0;
+            background-color: var(--color-bg-main);
+        }
+
+        .section-header-text {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            padding: 3rem 2rem;
+            background: var(--color-bg-main);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--color-accent);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-deep-blue);
+        }
+
+        /* --- APP STORE BANNER SECTION --- */
+        #appstore-banner {
+            background-color: var(--color-deep-blue);
+            color: white;
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .appstore-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .appstore-text {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .appstore-text h2 {
+            color: white;
+            text-align: left;
+        }
+
+        .appstore-text p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 2rem;
+        }
+
+        .appstore-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Simulated App Icon style */
+        .app-icon-visual {
+            width: 180px;
+            height: 180px;
+            background: linear-gradient(135deg, var(--color-accent), #005bea);
+            border-radius: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .app-store-button {
+            display: inline-block;
+            background-color: black;
+            border-radius: 10px;
+            padding: 0.8rem 1.5rem;
+            transition: transform 0.2s;
+        }
+        .app-store-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--color-bg-secondary);
+            padding: 5rem 0 2rem 0;
+            text-align: center;
+        }
+
+        .footer-cta h2 {
+            color: var(--color-deep-blue);
+        }
+
+        .footer-bottom {
+            margin-top: 5rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 968px) {
+            .hero-content {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-bottom: 4rem;
+            }
+            
+            .hero-image {
+                margin-bottom: 3rem;
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .nav-links {
+                display: none; /* Hide nav links on mobile for simplicity */
+            }
+
+            .appstore-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .appstore-text h2 {
+                text-align: center;
+            }
+
+            .appstore-visual {
+                margin-top: 3rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 2rem;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    DKMA <span>Applications</span>.
+                </div>
+                <div class="nav-links">
+                    <a href="#services">Expertise</a>
+                    <a href="#appstore-banner">App Store</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Bespoke Digital Experiences tailored for B2B & B2C.</h1>
+                <p>We design stunning websites and deploy powerful, custom applications that solve real business challenges and engage customers.</p>
+                <a href="#contact" class="btn btn-primary">Start Your Project</a>
+            </div>
+            <div class="hero-image">
+                <div class="mockup-container">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="Mobile App Interface Mockup" width="350">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="container">
+            <div class="section-header-text">
+                <h2>Our Expertise</h2>
+                <p>We bridge the gap between complex business requirements and intuitive user experiences.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>B2B Enterprise Solutions</h3>
+                    <p>Streamline operations with custom internal tools, dashboards, and automated workflows designed for your specific business processes.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3>B2C Consumer Apps</h3>
+                    <p>Engage your audience with beautiful, high-performance mobile applications that drive retention and deliver value directly to end-users.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Web Design & Strategy</h3>
+                    <p>More than just websites. We build responsive digital platforms that serve as the cornerstone of your online presence.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="appstore-banner">
+        <div class="container appstore-content">
+            <div class="appstore-text">
+                <h2>See Our Work in the Wild.</h2>
+                <p>We don't just build for clients; we ship successful products too. Discover our live applications and experience the DKMA standard of quality firsthand.</p>
+                
+                <a href="#" target="_blank" class="app-store-button" aria-label="Download on the App Store">
+                    <svg viewBox="0 0 120 40" width="120" height="40" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#A6A6A6" d="M108.2 38.9H11.8C5.3 38.9 0 33.6 0 27.1V11.8C0 5.3 5.3 0 11.8 0h96.4c6.5 0 11.8 5.3 11.8 11.8v15.3c0 6.5-5.3 11.8-11.8 11.8z"/>
+                        <path fill="#000" d="M108.2 37.9H11.8C5.9 37.9 1 33 1 27.1V11.8C1 5.9 5.9 1 11.8 1h96.4c5.9 0 10.8 4.9 10.8 10.8v15.3c0 5.9-4.9 10.8-10.8 10.8z"/>
+                        <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="60" y1="2.118" x2="60" y2="37.882"><stop offset="0" stop-color="#313131"/><stop offset="1" stop-color="#121212"/></linearGradient>
+                        <path fill="url(#a)" d="M108.2 37.9H11.8C5.9 37.9 1 33 1 27.1V11.8C1 5.9 5.9 1 11.8 1h96.4c5.9 0 10.8 4.9 10.8 10.8v15.3c0 5.9-4.9 10.8-10.8 10.8z"/>
+                        <path fill="#FFF" d="M31.7 22.9c0 5.2-4.4 9.4-9.9 9.4s-9.9-4.2-9.9-9.4 4.4-9.4 9.9-9.4 9.9 4.2 9.9 9.4m30.4 9.1h-4.2l-1.9-3.8h-8.2l-1.9 3.8h-4.2l7.6-14.5h4.5l8.3 14.5zm-7.8-7l-2.5-4.9-2.4 4.9h4.9zm14.7 7.2c-1.5 0-2.8-.5-3.7-1.4-.9-.9-1.4-2.2-1.4-3.7v-9.3h3.8v9c0 1.5.9 2.2 2.5 2.2.7 0 1.3-.2 1.6-.5.4-.3.5-.9.5-1.6v-9.1h3.8v9c0 1.7-.5 3-1.5 4-1 1-2.4 1.4-4.1 1.4m15.1 0h-3.8v-4.6h-4.2v-3h4.2v-3.3c0-1.2.3-2.1.8-2.8s1.4-1 2.5-1c.8 0 1.6.2 2.1.5l-.9 2.8c-.3-.2-.7-.3-1.1-.3-.5 0-.8.2-1 .6-.2.3-.3.9-.3 1.5v2h4.2v3h-4.2v4.6zm22.5-3.3c-1.2 2.4-3.7 3.6-6.5 3.6-2.5 0-4.5-1-5.7-2.8-1.2-1.8-1.8-4.2-1.8-6.7 0-2.7.6-5.2 1.8-7 1.2-1.8 3.2-2.8 5.6-2.8 2.2 0 3.9.8 5 2.3.9 1.2 1.3 2.7 1.3 4.5h-3.6c0-1.1-.3-2.1-.8-2.7-.5-.7-1.2-1-2-1-1.3 0-2.2.7-2.8 2s-.8 3.1-.8 5c0 2.1.3 4 .8 5.2.6 1.2 1.4 1.9 2.7 1.9.9 0 1.6-.3 2.2-.9.6-.7.9-1.6.9-2.8h3.7zM21.8 18.3c-2.9 0-5.2 2-5.2 5 0 2.9 2.3 5 5.2 5s5.2-2.1 5.2-5c0-2.9-2.3-5-5.2-5m61.5 7c-.7 0-1.2-.2-1.5-.5-.3-.3-.4-.8-.4-1.5v-5h3.4v4.5c0 .7-.1 1.2-.2 1.4 0 .2-.2.4-.4.5-.2.2-.5.3-1 .3z"/>
+                    </svg>
+                    <div style="color: white; font-size: 12px; margin-top: 5px;">Find us at <strong>DKMA</strong></div>
+                </a>
+            </div>
+            <div class="appstore-visual">
+                <div class="app-icon-visual">D.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-cta">
+                <h2>Ready to build your vision?</h2>
+                <p style="margin-bottom: 2rem;">Let's discuss how we can create a bespoke solution for your business.</p>
+                <a href="mailto:hello@dkma.com" class="btn btn-primary">Get in Touch</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="logo" style="font-size: 1.2rem; margin-bottom: 1rem;">
+                    DKMA <span>Applications</span>.
+                </div>
+                <p>&copy; 2023 DKMA Applications. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
