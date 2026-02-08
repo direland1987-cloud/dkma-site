@@ -3,292 +3,469 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tapin Support - Get help with the Tapin martial arts training app">
-    <title>Support - Tapin</title>
+    <title>Tapin Support & Help Center</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background: white;
-            min-height: 100vh;
+            color: #333;
+            background-color: #f9f9f9;
         }
-
-        header {
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-            text-align: center;
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-
         h1 {
-            font-size: 2.5em;
-            color: #0066cc;
+            color: #1a1a1a;
+            font-size: 2.2em;
             margin-bottom: 10px;
+            border-bottom: 3px solid #007AFF;
+            padding-bottom: 10px;
         }
-
-        .subtitle {
-            color: #666;
-            font-size: 1.1em;
-        }
-
         h2 {
-            font-size: 1.8em;
-            color: #0066cc;
+            color: #1a1a1a;
+            font-size: 1.6em;
             margin-top: 40px;
             margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
+            border-left: 4px solid #007AFF;
+            padding-left: 15px;
         }
-
+        h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
         p {
             margin-bottom: 15px;
         }
-
-        .contact-box {
-            background: #f8f9fa;
-            border-left: 4px solid #0066cc;
-            padding: 30px;
-            margin: 30px 0;
-            text-align: center;
-        }
-
-        .contact-box h2 {
-            border: none;
-            margin: 0 0 20px 0;
-            padding: 0;
-        }
-
-        .email-link {
-            display: inline-block;
-            background: #0066cc;
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 20px 0;
-            transition: background 0.3s;
-        }
-
-        .email-link:hover {
-            background: #0052a3;
-        }
-
-        .faq-section {
-            margin: 40px 0;
-        }
-
-        .faq-item {
-            background: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
-
-        .faq-question {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #0066cc;
-            margin-bottom: 10px;
-        }
-
-        .faq-answer {
-            color: #555;
-        }
-
         ul {
-            margin-left: 30px;
             margin-bottom: 15px;
+            padding-left: 25px;
         }
-
         li {
             margin-bottom: 8px;
         }
-
+        strong {
+            color: #1a1a1a;
+        }
+        .meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 30px;
+        }
+        .quick-links {
+            background-color: #f0f8ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .quick-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+        .quick-links li {
+            margin: 8px 0;
+        }
+        .contact-box {
+            background-color: #e7f5ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #007AFF;
+        }
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        .faq-answer {
+            color: #555;
+        }
+        .guidelines {
+            background-color: #fff9e6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .guidelines h3 {
+            margin-top: 0;
+        }
+        .do-dont {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .do-list, .dont-list {
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .do-list {
+            background-color: #e8f5e9;
+        }
+        .dont-list {
+            background-color: #ffebee;
+        }
+        .do-list h4, .dont-list h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
         .footer {
             margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #eee;
+            border-top: 1px solid #ddd;
             text-align: center;
             color: #666;
             font-size: 0.9em;
         }
-
-        .footer a {
-            color: #0066cc;
+        a {
+            color: #007AFF;
             text-decoration: none;
         }
-
-        .footer a:hover {
+        a:hover {
             text-decoration: underline;
         }
-
-        @media (max-width: 600px) {
+        .troubleshooting {
+            background-color: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
             .container {
-                padding: 15px;
+                padding: 20px;
             }
-
             h1 {
-                font-size: 2em;
+                font-size: 1.6em;
             }
-
             h2 {
-                font-size: 1.5em;
+                font-size: 1.3em;
             }
-
-            .email-link {
-                font-size: 1em;
-                padding: 12px 24px;
+            .do-dont {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Tapin Support</h1>
-            <p class="subtitle">We're here to help you get the most out of your training</p>
-        </header>
+        <h1>Tapin Support & Help Center</h1>
+        <div class="meta">
+            <strong>Last Updated:</strong> January 2025
+        </div>
+
+        <p>Welcome to the Tapin Support Center. We're here to help you get the most out of your martial arts training journey.</p>
+
+        <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+                <li><a href="#account-billing">Account & Billing</a></li>
+                <li><a href="#technical">Technical Support</a></li>
+                <li><a href="#features">Feature Guides</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
 
         <div class="contact-box">
-            <h2>Get in Touch</h2>
-            <p>For technical support, account issues, or general questions:</p>
-            <a href="mailto:tapin@dkma.online" class="email-link">tapin@dkma.online</a>
-            <p style="margin-top: 20px; color: #666; font-size: 0.9em;">
-                We typically respond within 24-48 hours
-            </p>
+            <h3>Contact Information</h3>
+            <p><strong>Email Support:</strong> <a href="mailto:tapin@dkma.online">tapin@dkma.online</a><br>
+            <strong>Response Time:</strong> We aim to respond within 24-48 hours on business days</p>
+            <p><strong>Support Hours:</strong><br>
+            Monday - Friday: 9:00 AM - 6:00 PM (Your Local Time)<br>
+            Saturday - Sunday: Limited support (emergency issues only)</p>
         </div>
 
-        <div class="faq-section">
-            <h2>Frequently Asked Questions</h2>
+        <h2 id="faq">Frequently Asked Questions</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I create an account?</div>
-                <div class="faq-answer">
-                    Download the Tapin app from the App Store, tap "Sign Up," and follow the prompts to create your account using your email address.
-                </div>
-            </div>
+        <h3>Getting Started</h3>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I delete my account?</div>
-                <div class="faq-answer">
-                    Go to Settings → Account → Delete Account. Your data will be permanently removed within 30 days. You can also email us at tapin@dkma.online to request account deletion.
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I create an account?</div>
+            <div class="faq-answer">A: Download Tapin from the App Store, tap "Sign Up," and create an account using your email or Sign in with Apple. Follow the onboarding prompts to select your martial art style and set up your profile.</div>
+        </div>
 
-            <div class="faq-item">
-                <div class="faq-question">Is my biometric data (Face ID) safe?</div>
-                <div class="faq-answer">
-                    Yes! Your Face ID and biometric data is processed entirely on your device. We never collect, store, or transmit your biometric information to our servers.
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: Which martial arts does Tapin support?</div>
+            <div class="faq-answer">A: Tapin is designed for all martial arts styles, including BJJ, MMA, Muay Thai, Judo, Wrestling, and more. The app is style-agnostic and adapts to your training needs.</div>
+        </div>
 
-            <div class="faq-item">
-                <div class="faq-question">How do I join a gym/club?</div>
-                <div class="faq-answer">
-                    In the app, navigate to Settings → Switch Club → Join Club. Search for your gym and request to join. The gym admin will need to approve your request.
-                </div>
-            </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I join a gym or club?</div>
+            <div class="faq-answer">A: Ask your gym administrator for an invite code or link. Go to "Clubs" > "Join Club" and enter the code or tap the invitation link.</div>
+        </div>
 
-            <div class="faq-item">
-                <div class="faq-question">What is Tapin Premium?</div>
-                <div class="faq-answer">
-                    Tapin Premium ($3.99/month or $39.99/year) unlocks advanced features like unlimited voice notes, priority support, advanced analytics, and more. You can subscribe from the Settings menu.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I cancel my subscription?</div>
-                <div class="faq-answer">
-                    Go to your iPhone Settings → [Your Name] → Subscriptions → Tapin → Cancel Subscription. You'll continue to have access until the end of your billing period.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">Can I export my training notes?</div>
-                <div class="faq-answer">
-                    Yes! Premium users can export their training notes and progress data. Go to Settings → Export Data to download your information.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do push notifications work?</div>
-                <div class="faq-answer">
-                    You'll receive notifications for class reminders, new posts, and important updates. You can customize which notifications you receive in Settings → Notifications.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">I forgot my password. How do I reset it?</div>
-                <div class="faq-answer">
-                    On the login screen, tap "Forgot Password" and follow the instructions. You'll receive a password reset email at your registered email address.
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <div class="faq-question">How do I report inappropriate content?</div>
-                <div class="faq-answer">
-                    Tap the three dots (•••) on any post or comment and select "Report." We review all reports and take appropriate action.
-                </div>
+        <div class="faq-item">
+            <div class="faq-question">Q: What's the difference between Student, Coach, and Admin accounts?</div>
+            <div class="faq-answer">A: 
+                <ul>
+                    <li><strong>Student accounts</strong> are for practitioners tracking their own training</li>
+                    <li><strong>Coach accounts</strong> allow you to create and manage classes for your students</li>
+                    <li><strong>Admin accounts</strong> are for gym owners managing multiple coaches and students</li>
+                </ul>
             </div>
         </div>
 
-        <section>
-            <h2>Technical Issues</h2>
-            <p>If you're experiencing technical problems, please include the following information in your email:</p>
+        <h3 id="account-billing">Subscriptions & Billing</h3>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: What subscription tiers are available?</div>
+            <div class="faq-answer">A: Tapin offers five tiers:
+                <ul>
+                    <li><strong>Student Free</strong> ($0): Basic training journal with 30-day history</li>
+                    <li><strong>Student Pro</strong> ($4.99/month or $39.99/year): Unlimited history, media uploads, AI insights</li>
+                    <li><strong>Coach Solo</strong> ($12.99/month or $99.99/year): Manage up to 10 students and create your own club</li>
+                    <li><strong>Admin Pro</strong> ($29.99/month or $249.99/year): Up to 3 coaches and unlimited students</li>
+                    <li><strong>Admin Pro Max</strong> ($79.99/month or $649.99/year): Up to 15 coaches with advanced analytics</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I upgrade my subscription?</div>
+            <div class="faq-answer">A: Go to Settings > Subscription > Choose Plan. Select your desired tier and confirm the purchase through Apple's payment system.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Do you offer free trials?</div>
+            <div class="faq-answer">A: Yes! Coach Solo and Admin tiers include a 7-day free trial. Admin Pro Max offers a 14-day trial (B2B sales). Student Pro does not include a trial, but Student Free lets you try core features before upgrading.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I cancel my subscription?</div>
+            <div class="faq-answer">A: Open your iPhone Settings > tap your name > Subscriptions > Tapin > Cancel Subscription. Your access continues until the end of your current billing period.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Can I get a refund?</div>
+            <div class="faq-answer">A: Refunds are handled by Apple according to their refund policy. To request a refund, visit <a href="https://reportaproblem.apple.com" target="_blank">reportaproblem.apple.com</a> and sign in with your Apple ID. We cannot process refunds directly.</div>
+        </div>
+
+        <h3>Account Management</h3>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I reset my password?</div>
+            <div class="faq-answer">A: On the login screen, tap "Forgot Password" and enter your email. You'll receive a password reset link within a few minutes. Check your spam folder if you don't see it.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I delete my account?</div>
+            <div class="faq-answer">A: Go to Settings > Account > Delete Account. This action is permanent and cannot be undone. All your data (notes, posts, media) will be permanently deleted within 30 days.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I enable Face ID / biometric unlock?</div>
+            <div class="faq-answer">A: Go to Settings > Security > Enable Face ID (or Touch ID). This allows you to quickly unlock the app without entering your password each time.</div>
+        </div>
+
+        <h3>Training Journal & Notes</h3>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: What is "This Day Last Month"?</div>
+            <div class="faq-answer">A: This is Tapin's signature feature! Every day, we show you what you were training exactly one month ago, helping you see your progress and connect past learning with current training. (Available with Student Pro or higher)</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How do I create a training note?</div>
+            <div class="faq-answer">A: After attending a class or training session, tap the "+" button > "Add Note." You can write text, attach photos/videos, and tag techniques or training focus areas.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Can I attach videos to my notes?</div>
+            <div class="faq-answer">A: Yes! Student Pro and higher tiers allow video uploads up to 120 seconds. Tap the camera icon when creating a note.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Why can I only see 30 days of note history?</div>
+            <div class="faq-answer">A: The Student Free tier includes a 30-day history limit. Upgrade to Student Pro for unlimited access to your complete training history.</div>
+        </div>
+
+        <h2 id="technical">Technical Support</h2>
+
+        <div class="troubleshooting">
+            <h3>App Crashes or Freezing</h3>
+            <p>Try these steps:</p>
+            <ol>
+                <li>Force close the app and restart it</li>
+                <li>Restart your iPhone</li>
+                <li>Check for app updates in the App Store</li>
+                <li>Ensure you have iOS 14 or later installed</li>
+                <li>If the issue persists, contact support at <a href="mailto:tapin@dkma.online">tapin@dkma.online</a> with your device model and iOS version</li>
+            </ol>
+        </div>
+
+        <div class="troubleshooting">
+            <h3>Push Notifications Not Working</h3>
+            <p>Check these settings:</p>
+            <ol>
+                <li>iPhone Settings > Notifications > Tapin > ensure "Allow Notifications" is ON</li>
+                <li>In Tapin app: Settings > Notifications > enable desired notification types</li>
+                <li>Ensure Do Not Disturb is not blocking notifications</li>
+            </ol>
+        </div>
+
+        <div class="troubleshooting">
+            <h3>Videos Not Uploading</h3>
+            <p>Ensure:</p>
             <ul>
-                <li>Your device model (e.g., iPhone 15 Pro)</li>
-                <li>iOS version (e.g., iOS 17.2)</li>
-                <li>App version (found in Settings → About)</li>
-                <li>Description of the issue</li>
-                <li>Steps to reproduce the problem</li>
-                <li>Screenshots (if applicable)</li>
+                <li>Your video is under 120 seconds</li>
+                <li>You have a stable internet connection</li>
+                <li>You have granted Tapin camera/photo access (Settings > Privacy > Photos/Camera)</li>
+                <li>You have available storage on your device</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <h2>Feature Requests</h2>
-            <p>We love hearing from our users! If you have ideas for new features or improvements, please email us at <a href="mailto:tapin@dkma.online">tapin@dkma.online</a> with:</p>
+        <div class="troubleshooting">
+            <h3>Data Not Syncing Across Devices</h3>
+            <p>Ensure:</p>
             <ul>
-                <li>Description of the feature</li>
-                <li>How it would improve your experience</li>
-                <li>Any examples or mockups (optional)</li>
+                <li>You're logged in to the same account on all devices</li>
+                <li>You have an active internet connection</li>
+                <li>Force close and restart the app</li>
+                <li>If issues persist, try logging out and back in</li>
             </ul>
-        </section>
+        </div>
 
-        <section>
-            <h2>Privacy & Security</h2>
-            <p>For privacy-related questions or to exercise your data rights (access, correction, deletion), please contact us at <a href="mailto:tapin@dkma.online">tapin@dkma.online</a>.</p>
-            <p>Read our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a> for more information.</p>
-        </section>
+        <h2 id="features">Feature Guides</h2>
 
-        <section>
-            <h2>Business Inquiries</h2>
-            <p>For partnership opportunities, gym integrations, or business inquiries, please email us at <a href="mailto:tapin@dkma.online">tapin@dkma.online</a> with "Business Inquiry" in the subject line.</p>
-        </section>
+        <h3>Getting Started with Tapin</h3>
+        <ol>
+            <li>Download from App Store</li>
+            <li>Sign up with email or Apple</li>
+            <li>Select your martial art style</li>
+            <li>Join a club OR create your own</li>
+            <li>Start logging training sessions</li>
+        </ol>
+
+        <h3>How to Track Your Training Progress</h3>
+        <ol>
+            <li>Check in to classes to build your training streak</li>
+            <li>Add notes after each session</li>
+            <li>Review "This Day Last Month" to see your progress</li>
+            <li>Use the Analytics dashboard to track attendance and improvement</li>
+        </ol>
+
+        <h3>How to Create and Manage a Club (Coach/Admin)</h3>
+        <ol>
+            <li>Go to Settings > Create Club</li>
+            <li>Add club details, logo, and branding</li>
+            <li>Invite students via link or code</li>
+            <li>Create class schedules and lesson plans</li>
+            <li>Post announcements and engage with your community</li>
+        </ol>
+
+        <h2>Privacy & Security</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: What data does Tapin collect?</div>
+            <div class="faq-answer">A: We collect account information (email, profile), training data (notes, attendance), and usage analytics. For complete details, see our <a href="https://dkma.online/tapin/privacy">Privacy Policy</a>.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Is my biometric data (Face ID) stored on your servers?</div>
+            <div class="faq-answer">A: No. Face ID data is processed and stored locally on your device only. We never collect, store, or transmit biometric data.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: How is my data protected?</div>
+            <div class="faq-answer">A: We use industry-standard encryption (HTTPS/TLS), secure authentication, and partner with Supabase (SOC 2 Type II certified) for data processing. All sensitive data is encrypted both in transit and at rest.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Q: Can other users see my training notes?</div>
+            <div class="faq-answer">A: By default, your training notes are private. Only you can see them unless you explicitly choose to share them in the community forum.</div>
+        </div>
+
+        <div class="guidelines">
+            <h3>Community Guidelines</h3>
+            <p>Tapin is a positive, inclusive community for martial artists of all levels. When using the app:</p>
+            
+            <div class="do-dont">
+                <div class="do-list">
+                    <h4>✓ DO</h4>
+                    <ul>
+                        <li>Be respectful</li>
+                        <li>Be supportive</li>
+                        <li>Be inclusive</li>
+                        <li>Be constructive</li>
+                        <li>Be authentic</li>
+                    </ul>
+                </div>
+                <div class="dont-list">
+                    <h4>✗ DON'T</h4>
+                    <ul>
+                        <li>Harass or bully</li>
+                        <li>Spam</li>
+                        <li>Share inappropriate content</li>
+                        <li>Violate privacy</li>
+                        <li>Impersonate others</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 15px;"><small>Violations may result in content removal, account suspension, or permanent ban.</small></p>
+        </div>
+
+        <h2 id="contact">Contact Us</h2>
+
+        <h3>General Support</h3>
+        <p><strong>Email:</strong> <a href="mailto:tapin@dkma.online">tapin@dkma.online</a><br>
+        <strong>Subject Line:</strong> Include "Support Request" for faster routing</p>
+
+        <h3>Bug Reports</h3>
+        <p><strong>Email:</strong> <a href="mailto:tapin@dkma.online">tapin@dkma.online</a><br>
+        <strong>Subject Line:</strong> "Bug Report - [Brief Description]"<br>
+        <strong>Include:</strong></p>
+        <ul>
+            <li>Device model and iOS version</li>
+            <li>Steps to reproduce the issue</li>
+            <li>Screenshots or screen recordings if possible</li>
+        </ul>
+
+        <h3>Feature Requests</h3>
+        <p><strong>Email:</strong> <a href="mailto:tapin@dkma.online">tapin@dkma.online</a><br>
+        <strong>Subject Line:</strong> "Feature Request - [Feature Name]"<br>
+        <strong>Tell us:</strong> What feature you'd like and how it would improve your training</p>
+
+        <h3>Business & Partnership Inquiries</h3>
+        <p><strong>Email:</strong> <a href="mailto:tapin@dkma.online">tapin@dkma.online</a><br>
+        <strong>Subject Line:</strong> "Partnership Inquiry"</p>
+
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><strong>Privacy Policy:</strong> <a href="https://dkma.online/tapin/privacy">https://dkma.online/tapin/privacy</a></li>
+            <li><strong>Terms of Service:</strong> <a href="https://dkma.online/tapin/terms">https://dkma.online/tapin/terms</a></li>
+        </ul>
+
+        <h2>Feedback & Suggestions</h2>
+        <p>We're constantly improving Tapin based on user feedback. If you have ideas for new features or improvements, we'd love to hear from you!</p>
+        <p><strong>Share your feedback:</strong></p>
+        <ul>
+            <li>Email: <a href="mailto:tapin@dkma.online">tapin@dkma.online</a></li>
+            <li>In-app: Settings > Send Feedback</li>
+            <li>Rate us on the App Store</li>
+        </ul>
 
         <div class="footer">
-            <p>
-                <a href="privacy.html">Privacy Policy</a> |
-                <a href="terms.html">Terms of Service</a> |
-                <a href="mailto:tapin@dkma.online">Contact Us</a>
-            </p>
-            <p style="margin-top: 10px;">&copy; 2025 Tapin. All rights reserved.</p>
+            <p><strong>Thank you for choosing Tapin to support your martial arts journey!</strong></p>
+            <p>© 2025 Tapin. All rights reserved.</p>
         </div>
     </div>
 </body>
