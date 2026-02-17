@@ -1,398 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tapin Privacy Policy - How we collect, use, and protect your data">
-    <title>Privacy Policy - Tapin</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Privacy Policy — Tapin</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans&family=Poppins:wght@600;700;800:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"><style>/* TAPIN BRAND STYLES — Shared across all pages */
+:root {
+    --bg-primary: #141821;
+    --bg-secondary: #1a1e2e;
+    --bg-card: #222838;
+    --bg-card-hover: #2a3048;
+    --accent: #3ECDB5;
+    --accent-glow: rgba(62, 205, 181, 0.3);
+    --accent-soft: #5EDDC5;
+    --accent-dark: #2ba892;
+    --text-primary: #f0f0f0;
+    --text-secondary: #a0a8b8;
+    --text-muted: #5a6278;
+    --border: #2a3048;
+    --success: #3ECDB5;
+    --gold: #FFD740;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background: white;
-            min-height: 100vh;
-        }
+body {
+    font-family: 'DM Sans', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        header {
-            border-bottom: 3px solid #0066cc;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
+/* LOGO */
+.logo-svg {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+}
 
-        h1 {
-            font-size: 2.5em;
-            color: #0066cc;
-            margin-bottom: 10px;
-        }
+.logo-svg svg { filter: drop-shadow(0 0 8px var(--accent-glow)); }
 
-        .meta {
-            color: #666;
-            font-size: 0.9em;
-        }
+.logo-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
 
-        h2 {
-            font-size: 1.8em;
-            color: #0066cc;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-        }
 
-        h3 {
-            font-size: 1.3em;
-            color: #333;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
 
-        p {
-            margin-bottom: 15px;
-        }
+/* NAV */
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(20, 24, 33, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+}
 
-        ul, ol {
-            margin-left: 30px;
-            margin-bottom: 15px;
-        }
+.nav-links { display: flex; gap: 2rem; align-items: center; list-style: none; }
+.nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text-primary); }
+.nav-links a.active { color: var(--accent); }
 
-        li {
-            margin-bottom: 8px;
-        }
+.nav-cta {
+    background: var(--accent) !important;
+    color: var(--bg-primary) !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 8px;
+    font-weight: 700 !important;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+}
 
-        strong {
-            color: #0066cc;
-        }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow); }
 
-        .contact-box {
-            background: #f8f9fa;
-            border-left: 4px solid #0066cc;
-            padding: 20px;
-            margin: 30px 0;
-        }
+.mobile-menu-btn { display: none; background: none; border: none; color: var(--text-primary); font-size: 1.5rem; cursor: pointer; }
 
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-        }
+/* BUTTONS */
+.btn-primary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: var(--bg-primary);
+    padding: 0.9rem 2rem; border-radius: 10px;
+    text-decoration: none; font-weight: 700; font-size: 1rem;
+    transition: all 0.25s; border: none; cursor: pointer;
+}
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--accent-glow); background: var(--accent-soft); }
 
-            h1 {
-                font-size: 2em;
-            }
+.btn-secondary {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: transparent; color: var(--text-primary);
+    padding: 0.9rem 2rem; border-radius: 10px;
+    text-decoration: none; font-weight: 600; font-size: 1rem;
+    border: 1px solid var(--border); transition: all 0.25s;
+}
 
-            h2 {
-                font-size: 1.5em;
-            }
-        }
-    </style>
-</head>
+.btn-secondary:hover { border-color: var(--text-muted); background: var(--bg-card); }
+
+/* SHARED */
+.container { max-width: 1200px; margin: 0 auto; }
+
+.section-label {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent);
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.accent { color: var(--accent); }
+
+/* HERO */
+.hero {
+    min-height: 100vh; display: flex; align-items: center;
+    padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
+}
+
+.hero::before {
+    content: ''; position: absolute; top: -50%; right: -20%; width: 80%; height: 150%;
+    background: radial-gradient(ellipse, var(--accent-glow) 0%, transparent 70%);
+    opacity: 0.12; pointer-events: none;
+}
+
+.hero::after {
+    content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+    background: linear-gradient(transparent, var(--bg-primary)); pointer-events: none;
+}
+
+.hero-content {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
+    align-items: center; position: relative; z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(62,205,181,0.08); border: 1px solid rgba(62,205,181,0.25);
+    padding: 0.4rem 1rem; border-radius: 100px;
+    font-size: 0.8rem; color: var(--accent); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 1.5rem;
+}
+
+.hero-badge::before { content: ''; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem,6vw,5rem); line-height: 0.95; letter-spacing: 1px; margin-bottom: 1.5rem; }
+
+.hero-sub { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 500px; line-height: 1.7; }
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-stats { display: flex; gap: 2rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.hero-stat h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--accent); }
+.hero-stat p { font-size: 0.8rem; color: var(--text-muted); }
+
+/* PHONE MOCKUP */
+.hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
+
+.phone-mockup {
+    width: 280px; height: 580px; background: var(--bg-secondary);
+    border-radius: 40px; border: 3px solid var(--border);
+    position: relative; overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.4), 0 0 60px var(--accent-glow);
+}
+
+.phone-mockup .notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 120px; height: 28px; background: var(--bg-primary); border-radius: 0 0 20px 20px; z-index: 2; }
+
+.phone-screen { width: 100%; height: 100%; padding: 40px 16px 16px; display: flex; flex-direction: column; gap: 12px; }
+.screen-header { text-align: center; padding: 8px 0; }
+.screen-header .screen-logo { display: flex; align-items: center; justify-content: center; gap: 6px; margin-bottom: 4px; }
+.screen-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; letter-spacing: 1px; color: var(--accent); }
+.screen-header p { font-size: 0.7rem; color: var(--text-muted); }
+
+.screen-card { background: var(--bg-card); border-radius: 12px; padding: 12px; border: 1px solid var(--border); }
+.screen-card-label { font-size: 0.6rem; color: var(--accent); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; }
+.screen-card h4 { font-size: 0.85rem; margin-bottom: 4px; }
+.screen-card p { font-size: 0.65rem; color: var(--text-secondary); line-height: 1.4; }
+
+.screen-reflection { background: linear-gradient(135deg, rgba(62,205,181,0.08), rgba(255,215,64,0.03)); border: 1px solid rgba(62,205,181,0.2); }
+.screen-reflection .screen-card-label { color: var(--gold); }
+
+.screen-streak { display: flex; justify-content: center; gap: 6px; padding: 8px 0; }
+.streak-dot { width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.55rem; font-weight: 700; }
+.streak-dot.active { background: var(--accent); color: var(--bg-primary); }
+.streak-dot.done { background: var(--accent-dark); color: white; }
+.streak-dot.empty { background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border); }
+
+/* PROBLEM */
+.problem { padding: 6rem 2rem; background: var(--bg-secondary); position: relative; }
+.problem::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+
+.problem-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.problem-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; transition: all 0.3s; }
+.problem-card:hover { border-color: rgba(62,205,181,0.3); transform: translateY(-4px); }
+.problem-icon { font-size: 2rem; margin-bottom: 1rem; }
+.problem-card h3 { font-size: 1.1rem; margin-bottom: 0.75rem; font-weight: 700; }
+.problem-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }
+
+/* FEATURES */
+.features { padding: 6rem 2rem; }
+.features-intro { max-width: 700px; margin-bottom: 4rem; }
+.features-intro p { color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7; }
+
+.feature-row { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; }
+.feature-row.reverse { direction: rtl; }
+.feature-row.reverse > * { direction: ltr; }
+
+.feature-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; line-height: 1; margin-bottom: 1rem; }
+.feature-text p { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+
+.feature-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.feature-bullets li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.95rem; color: var(--text-secondary); }
+.feature-bullets li::before { content: '→'; color: var(--accent); font-weight: 700; flex-shrink: 0; }
+
+.feature-visual {
+    background: var(--bg-card); border-radius: 20px; border: 1px solid var(--border);
+    padding: 2rem; min-height: 350px; display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+}
+.feature-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%); opacity: 0.06; }
+.feature-visual-placeholder { text-align: center; position: relative; z-index: 1; }
+.feature-visual-placeholder .icon { font-size: 4rem; margin-bottom: 1rem; }
+.feature-visual-placeholder p { color: var(--text-muted); font-size: 0.85rem; }
+
+/* DISCIPLINES */
+.disciplines { padding: 4rem 2rem 6rem; text-align: center; }
+.discipline-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; }
+.discipline-tag { background: var(--bg-card); border: 1px solid var(--border); padding: 1rem 2rem; border-radius: 12px; font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 2px; transition: all 0.3s; }
+.discipline-tag:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+/* PERSONAS */
+.personas { padding: 6rem 2rem; background: var(--bg-secondary); }
+.persona-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.persona-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; text-align: center; transition: all 0.3s; }
+.persona-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+.persona-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+.persona-card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 1px; margin-bottom: 0.75rem; }
+.persona-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6; }
+.persona-price { display: inline-block; margin-top: 1rem; background: rgba(62,205,181,0.1); color: var(--accent); padding: 0.3rem 0.8rem; border-radius: 6px; font-weight: 700; font-size: 0.85rem; }
+
+/* SOCIAL PROOF */
+.proof { padding: 6rem 2rem; }
+.proof-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.proof-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.proof-stars { color: var(--gold); font-size: 1rem; margin-bottom: 1rem; }
+.proof-card blockquote { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 1rem; }
+.proof-author { display: flex; align-items: center; gap: 0.75rem; }
+.proof-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--accent); color: var(--bg-primary); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.85rem; }
+.proof-name { font-weight: 600; font-size: 0.9rem; }
+.proof-role { color: var(--text-muted); font-size: 0.8rem; }
+
+/* DIFFERENTIATOR */
+.differentiator { padding: 6rem 2rem; background: linear-gradient(180deg, var(--bg-secondary), var(--bg-primary)); text-align: center; }
+.diff-box { max-width: 700px; margin: 3rem auto 0; background: linear-gradient(135deg, rgba(62,205,181,0.06), rgba(255,215,64,0.03)); border: 1px solid rgba(62,205,181,0.2); border-radius: 20px; padding: 3rem; position: relative; }
+.diff-box::before { content: '📅'; font-size: 3rem; position: absolute; top: -1.5rem; left: 50%; transform: translateX(-50%); background: var(--bg-secondary); padding: 0 1rem; }
+.diff-label { font-family: 'Bebas Neue', sans-serif; color: var(--gold); font-size: 1rem; letter-spacing: 2px; margin-bottom: 1rem; }
+.diff-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; margin-bottom: 1rem; }
+.diff-box p { color: var(--text-secondary); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+.diff-example { background: var(--bg-card); border-radius: 12px; padding: 1.5rem; text-align: left; border: 1px solid var(--border); }
+.diff-example .date { font-size: 0.75rem; color: var(--accent); font-weight: 700; margin-bottom: 0.5rem; }
+.diff-example p { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0; font-style: italic; }
+
+/* PRICING MINI */
+.pricing-cta { padding: 6rem 2rem; text-align: center; }
+.pricing-mini { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 900px; margin: 3rem auto; }
+.pricing-mini-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.5rem; transition: all 0.3s; }
+.pricing-mini-card.featured { border-color: var(--accent); background: rgba(62,205,181,0.04); }
+.pricing-mini-card h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 0.5rem; }
+.pricing-mini-card .price { font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.pricing-mini-card .price span { font-size: 0.85rem; color: var(--text-muted); font-weight: 400; }
+.pricing-mini-card .desc { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem; }
+
+/* FINAL CTA */
+.final-cta { padding: 6rem 2rem; background: var(--bg-secondary); text-align: center; position: relative; overflow: hidden; }
+.final-cta::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 600px; height: 600px; background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%); opacity: 0.1; }
+.final-cta h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem,5vw,4rem); line-height: 1; margin-bottom: 1rem; position: relative; }
+.final-cta p { color: var(--text-secondary); font-size: 1.1rem; max-width: 550px; margin: 0 auto 2rem; position: relative; }
+
+/* FOOTER */
+footer { padding: 3rem 2rem; border-top: 1px solid var(--border); }
+.footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 2rem; }
+.footer-brand p { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem; max-width: 300px; }
+.footer-links h4 { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.75rem; }
+.footer-links ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.footer-links a:hover { color: var(--text-primary); }
+.footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; color: var(--text-muted); font-size: 0.8rem; }
+.footer-bottom a { color: var(--text-secondary); text-decoration: none; }
+
+/* PAGE HEADER (used on pricing, support, legal pages) */
+.page-header { padding: 8rem 2rem 3rem; text-align: center; }
+.page-header h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem,5vw,3.5rem); margin-bottom: 1rem; }
+
+/* LEGAL CONTENT */
+.legal-content { max-width: 800px; margin: 0 auto; padding: 8rem 2rem 4rem; }
+.legal-content h1 { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; margin-bottom: 0.5rem; }
+.legal-meta { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+.legal-content h2 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.5px; margin-top: 2.5rem; margin-bottom: 1rem; color: var(--accent-soft); }
+.legal-content h3 { font-size: 1rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+.legal-content p { color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+.legal-content ul, .legal-content ol { color: var(--text-secondary); margin-bottom: 1rem; padding-left: 1.5rem; font-size: 0.95rem; }
+.legal-content li { margin-bottom: 0.4rem; line-height: 1.8; }
+.legal-content a { color: var(--accent-soft); text-decoration: none; }
+.legal-content a:hover { text-decoration: underline; }
+.legal-content strong { color: var(--text-primary); }
+
+/* SIMPLE FOOTER (for subpages) */
+.simple-footer { padding: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted); font-size: 0.8rem; }
+.simple-footer a { color: var(--text-secondary); text-decoration: none; margin: 0 0.5rem; }
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero-sub { margin-left: auto; margin-right: auto; }
+    .hero-ctas { justify-content: center; }
+    .hero-visual { order: -1; }
+    .hero-stats { justify-content: center; }
+    .feature-row, .feature-row.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .feature-row.reverse > * { direction: ltr; }
+    .nav-links { display: none; }
+    .nav-links.active {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: var(--bg-primary);
+        padding: 1rem 2rem 2rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu-btn { display: block; }
+    .phone-mockup { width: 240px; height: 500px; }
+    .footer-content { flex-direction: column; }
+}
+
+@media (max-width: 600px) {
+    .hero { padding-top: 6rem; }
+    .problem-grid, .persona-grid, .proof-grid { grid-template-columns: 1fr; }
+    .pricing-mini { grid-template-columns: 1fr 1fr; }
+}
+</style></head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Tapin Privacy Policy</h1>
-            <div class="meta">
-                <strong>Effective Date:</strong> January 2025<br>
-                <strong>Last Updated:</strong> January 2025
-            </div>
-        </header>
-
-        <section>
-            <h2>1. Introduction</h2>
-            <p>Tapin ("we," "our," "us," or "Company") operates the Tapin mobile application (the "App"). We are committed to protecting your privacy and ensuring you have a positive experience on our App. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App.</p>
-            <p>Please read this Privacy Policy carefully. If you do not agree with our policies and practices, please do not use our App.</p>
-        </section>
-
-        <section>
-            <h2>2. Information We Collect</h2>
-
-            <h3>2.1 Information You Provide Directly</h3>
-            <p><strong>Account Information:</strong></p>
-            <ul>
-                <li>Email address</li>
-                <li>Password (encrypted)</li>
-                <li>User profile information (name, belt level, gym affiliation)</li>
-            </ul>
-
-            <p><strong>Training Data:</strong></p>
-            <ul>
-                <li>Lesson notes and descriptions</li>
-                <li>Training focus areas (technique, strength, conditioning)</li>
-                <li>Attendance records and check-in history</li>
-                <li>Personal training metrics and progress tracking</li>
-            </ul>
-
-            <p><strong>User-Generated Content:</strong></p>
-            <ul>
-                <li>Community posts and comments</li>
-                <li>Direct messages between users</li>
-                <li>Photos and media attachments</li>
-            </ul>
-
-            <p><strong>Biometric Data:</strong></p>
-            <ul>
-                <li>Face ID data (iOS) or facial recognition data (Android)</li>
-                <li><strong>Important:</strong> Biometric data is processed and stored locally on your device only. We do not collect, store, or transmit your biometric data to our servers.</li>
-            </ul>
-
-            <p><strong>Device Information:</strong></p>
-            <ul>
-                <li>Device type and model</li>
-                <li>Operating system and version</li>
-                <li>Unique device identifier</li>
-                <li>IP address</li>
-                <li>Log data and app usage analytics</li>
-            </ul>
-
-            <h3>2.2 Information Collected Automatically</h3>
-            <p><strong>Usage Analytics:</strong></p>
-            <ul>
-                <li>Features accessed and frequency of use</li>
-                <li>Time spent in the App</li>
-                <li>Crash reports and error logs</li>
-                <li>Device permissions granted</li>
-            </ul>
-
-            <p><strong>Cookies and Similar Technologies:</strong></p>
-            <ul>
-                <li>Session tokens for authentication</li>
-                <li>Preferences and settings</li>
-                <li>Anonymous analytics tracking</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>3. How We Use Your Information</h2>
-            <p>We use the information we collect for the following purposes:</p>
-            <ul>
-                <li><strong>Account Management:</strong> Creating and maintaining your user account</li>
-                <li><strong>Service Delivery:</strong> Providing training tracking, note-taking, and community features</li>
-                <li><strong>Communication:</strong> Sending push notifications, maintenance updates, and support responses</li>
-                <li><strong>Analytics & Improvement:</strong> Understanding user behavior to enhance App features and performance</li>
-                <li><strong>Security:</strong> Detecting and preventing fraud, unauthorized access, and security threats</li>
-                <li><strong>Legal Compliance:</strong> Fulfilling legal obligations and responding to lawful requests</li>
-                <li><strong>Personalization:</strong> Customizing your experience based on preferences and activity</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>4. Data Processing and Supabase</h2>
-
-            <h3>4.1 Supabase as Data Processor</h3>
-            <p>We use Supabase (an open-source Firebase alternative) as our primary backend infrastructure and data processor. Your data is processed and stored on Supabase's servers.</p>
-
-            <p><strong>Data Security Measures:</strong></p>
-            <ul>
-                <li>End-to-end encryption for sensitive data (passwords, authentication tokens)</li>
-                <li>HTTPS/TLS encryption in transit</li>
-                <li>Database-level encryption at rest</li>
-                <li>Regular security audits and compliance certifications</li>
-            </ul>
-
-            <p><strong>Supabase Compliance:</strong></p>
-            <ul>
-                <li>GDPR compliant data processing</li>
-                <li>SOC 2 Type II certified</li>
-                <li>EU and US data center options</li>
-                <li>Standard Data Processing Agreement in place</li>
-            </ul>
-
-            <h3>4.2 Data Retention</h3>
-            <p>We retain your information for as long as necessary to provide our services:</p>
-            <ul>
-                <li><strong>Account Data:</strong> Retained while your account is active and 90 days after deletion</li>
-                <li><strong>Training Notes & Posts:</strong> Retained until you delete them or request account deletion</li>
-                <li><strong>Analytics Data:</strong> Retained for up to 12 months</li>
-                <li><strong>Backups:</strong> Retained in compliance with Supabase retention policies</li>
-            </ul>
-            <p>Upon account deletion, all personal data is permanently removed from our active systems within 30 days, except where legally required to retain records.</p>
-        </section>
-
-        <section>
-            <h2>5. Sharing Your Information</h2>
-
-            <h3>5.1 We Do Not Sell Your Data</h3>
-            <p>We do not sell, trade, or rent your personal information to third parties.</p>
-
-            <h3>5.2 Shared With</h3>
-            <p>Your information may be shared in the following circumstances:</p>
-
-            <p><strong>Community Features:</strong></p>
-            <ul>
-                <li>Your posts and comments are visible to other App users (as per your privacy settings)</li>
-                <li>Your gym name and belt level may be visible on your profile</li>
-                <li>Your training notes are private by default unless you choose to share them</li>
-            </ul>
-
-            <p><strong>Service Providers:</strong></p>
-            <ul>
-                <li>Supabase (data processor)</li>
-                <li>Third-party analytics services (anonymized data only)</li>
-                <li>Push notification service providers</li>
-            </ul>
-
-            <p><strong>Legal Requirements:</strong></p>
-            <ul>
-                <li>Law enforcement or government agencies when required by law</li>
-                <li>To protect our legal rights and the rights of users</li>
-                <li>In case of a data breach, to comply with notification requirements</li>
-            </ul>
-
-            <h3>5.3 Data Sharing Controls</h3>
-            <p>You have control over what information you share:</p>
-            <ul>
-                <li>Adjust privacy settings to control post visibility</li>
-                <li>Delete content at any time</li>
-                <li>Disable push notifications</li>
-                <li>Opt-out of analytics tracking</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>6. Biometric Data & Face ID</h2>
-
-            <h3>6.1 Local Processing Only</h3>
-            <p>Face ID (iOS) and biometric authentication features are processed entirely on your device. Your biometric data is NOT:</p>
-            <ul>
-                <li>Transmitted to our servers</li>
-                <li>Stored in any cloud database</li>
-                <li>Shared with third parties</li>
-                <li>Used for purposes other than device authentication</li>
-            </ul>
-
-            <h3>6.2 Apple & Android Privacy</h3>
-            <p>Your biometric data is protected by Apple's and Android's own security frameworks:</p>
-            <ul>
-                <li>Biometric information is managed by the device's secure enclave</li>
-                <li>We only receive authentication success/failure signals</li>
-                <li>We never access or see your actual biometric data</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>7. Push Notifications</h2>
-
-            <h3>7.1 Push Notification Data</h3>
-            <p>We may send you push notifications about:</p>
-            <ul>
-                <li>Lesson reminders and schedule updates</li>
-                <li>Community activity (new posts, comments, messages)</li>
-                <li>Account security alerts</li>
-                <li>App updates and maintenance notices</li>
-            </ul>
-
-            <h3>7.2 Opting Out</h3>
-            <p>You can disable push notifications at any time through:</p>
-            <ul>
-                <li>App settings (in-app notification preferences)</li>
-                <li>Device settings (iOS: Settings > Notifications > Tapin; Android: Settings > Apps > Tapin > Notifications)</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>8. Your Privacy Rights (GDPR & Similar Laws)</h2>
-            <p>If you are located in the European Union, California, Australia, or other jurisdictions with privacy laws, you have the following rights:</p>
-
-            <h3>8.1 Access & Portability</h3>
-            <p>You have the right to access your personal data and request a copy in a portable format.</p>
-
-            <h3>8.2 Correction & Deletion</h3>
-            <p>You have the right to correct inaccurate information and request deletion of your data (subject to legal retention obligations).</p>
-
-            <h3>8.3 Objection & Restriction</h3>
-            <p>You have the right to object to certain processing and request restriction of data use.</p>
-
-            <h3>8.4 Withdrawal of Consent</h3>
-            <p>Where we process data based on your consent, you can withdraw that consent at any time.</p>
-
-            <h3>8.5 Filing a Complaint</h3>
-            <p>You have the right to lodge a complaint with your local data protection authority.</p>
-        </section>
-
-        <section>
-            <h2>9. Security</h2>
-
-            <h3>9.1 Security Measures</h3>
-            <p>We implement comprehensive security measures:</p>
-            <ul>
-                <li>HTTPS/TLS encryption for all data in transit</li>
-                <li>Password hashing using industry-standard algorithms</li>
-                <li>Role-based access controls for our team</li>
-                <li>Regular security testing and vulnerability assessments</li>
-                <li>Secure authentication tokens with expiration</li>
-            </ul>
-
-            <h3>9.2 Limitations</h3>
-            <p>No security system is 100% secure. While we implement robust protections, we cannot guarantee absolute security. You use the App at your own risk.</p>
-
-            <h3>9.3 Data Breach Notification</h3>
-            <p>In the event of a confirmed data breach affecting your information, we will:</p>
-            <ul>
-                <li>Notify affected users without unreasonable delay</li>
-                <li>Provide details of the breach and data involved</li>
-                <li>Offer guidance on protective measures</li>
-                <li>Comply with all legal notification requirements</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>10. Children's Privacy</h2>
-            <p>The Tapin App is not intended for use by children under the age of 13 (or the applicable age of digital consent in your jurisdiction). We do not knowingly collect personal information from children under 13. If we become aware that a child has provided us with personal information, we will delete such information and terminate the child's account.</p>
-        </section>
-
-        <section>
-            <h2>11. Changes to This Privacy Policy</h2>
-            <p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of any material changes by:</p>
-            <ul>
-                <li>Updating the "Last Updated" date at the top of this policy</li>
-                <li>Sending you a notification through the App</li>
-                <li>Requesting your consent if required by law</li>
-            </ul>
-            <p>Your continued use of the App after changes indicates your acceptance of the updated Privacy Policy.</p>
-        </section>
-
-        <div class="contact-box">
-            <h2>Contact Us</h2>
-            <p>If you have questions about this Privacy Policy, wish to exercise your privacy rights, or need to report a privacy concern, please contact us:</p>
-            <p>
-                <strong>Tapin</strong><br>
-                Email: <a href="mailto:tapin@dkma.online">tapin@dkma.online</a>
-            </p>
-            <p>For GDPR and Data Protection inquiries, please include:</p>
-            <ul>
-                <li>Your full name and user ID (if applicable)</li>
-                <li>Description of your request</li>
-                <li>Proof of identity</li>
-                <li>Specific data or account information involved</li>
-            </ul>
-            <p>We will respond to your request within 30 days (or as required by applicable law).</p>
-        </div>
-
-        <div class="footer">
-            <p><strong>Compliance Certifications:</strong> GDPR Compliant | CCPA Compliant (California) | Privacy Act 1988 Compliant (Australia) | App Store Privacy Requirements</p>
-            <p>&copy; 2025 Tapin. All rights reserved.</p>
-        </div>
-    </div>
-</body>
-</html>
+<nav><a href="/tapin/" class="logo-svg"><img src="data:image/png;base64,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" alt="Tapin" style="height:32px;"></a><button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button><ul class="nav-links"><li><a href="index.html#features">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="support.html">Support</a></li></ul></nav>
+<div class="legal-content">
+    <h1>Privacy Policy</h1>
+    <p class="legal-meta">Last updated: February 11, 2026 · Effective: February 11, 2026</p>
+    <p>DKMA Applications ("we," "us," or "our") operates the Tapin mobile application and website (collectively, the "Service"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Service.</p>
+    <p>Please read this Privacy Policy carefully. By using Tapin, you agree to the collection and use of information in accordance with this policy.</p>
+    <h2>1. Information We Collect</h2>
+    <h3>1.1 Information You Provide</h3>
+    <ul><li><strong>Account Information:</strong> Name, email address, and password when you create an account. If you use Sign in with Apple, we receive your name and email (or a private relay email).</li><li><strong>Profile Information:</strong> Your martial art style(s), training experience level, and optional profile photo.</li><li><strong>Training Notes:</strong> Text, photos, videos, and voice recordings you create within the app.</li><li><strong>Club & Class Data:</strong> Information related to clubs you join or create, class schedules, lesson plans, and attendance records.</li><li><strong>Forum Content:</strong> Posts, replies, and other content you share in community forums.</li><li><strong>Payment Information:</strong> Subscription purchases are processed through Apple's App Store or Stripe. We do not directly collect or store your payment details.</li><li><strong>Support Communications:</strong> Information you provide when contacting our support team.</li></ul>
+    <h3>1.2 Information Collected Automatically</h3>
+    <ul><li><strong>Device Information:</strong> Device type, operating system version, unique device identifiers.</li><li><strong>Usage Data:</strong> Features used, pages viewed, time spent in the app, crash reports.</li><li><strong>Push Notification Tokens:</strong> Device tokens for delivering push notifications (only if you grant permission).</li></ul>
+    <h3>1.3 Information from Third Parties</h3>
+    <ul><li><strong>Apple Sign In:</strong> Name and email address as authorised by you.</li><li><strong>Analytics Providers:</strong> Aggregated, anonymised usage analytics.</li></ul>
+    <h2>2. How We Use Your Information</h2>
+    <ul><li>Provide, maintain, and improve the Tapin Service</li><li>Create and manage your account</li><li>Process subscriptions and manage your entitlements</li><li>Deliver the "This Day Last Month" feature and training reflections</li><li>Send push notifications based on your preferences</li><li>Provide AI-powered technique suggestions (Pro tier and above)</li><li>Respond to your support inquiries</li><li>Monitor and analyse usage trends to improve the app</li><li>Detect and prevent fraud or violations of our Terms of Service</li><li>Comply with legal obligations</li></ul>
+    <h2>3. How We Share Your Information</h2>
+    <p>We do <strong>not</strong> sell, rent, or trade your personal information. We may share your information only:</p>
+    <ul><li><strong>With Your Club/Gym:</strong> Club coaches and admins can see your name, profile, attendance, and forum posts. Your private training notes are <strong>never</strong> shared.</li><li><strong>Service Providers:</strong> Supabase (data hosting), Firebase (push notifications), RevenueCat (subscriptions), OpenAI (AI features).</li><li><strong>Legal Requirements:</strong> If required by law, regulation, or governmental request.</li><li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of assets.</li></ul>
+    <h2>4. Data Storage and Security</h2>
+    <p>Your data is stored securely using Supabase's cloud infrastructure with encryption at rest and in transit. We implement TLS/SSL encryption, row-level security policies, and regular security reviews.</p>
+    <h2>5. Data Retention</h2>
+    <p>We retain your personal information for as long as your account is active. If you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
+    <h2>6. Your Rights and Choices</h2>
+    <h3>6.1 Account Management</h3>
+    <ul><li><strong>Access & Update:</strong> Update your profile information at any time within the app.</li><li><strong>Delete Account:</strong> Delete your account and all data from Settings. This is permanent.</li><li><strong>Export Data:</strong> Pro tier users can export their training notes and history.</li></ul>
+    <h3>6.2 GDPR Rights (EEA/UK Users)</h3>
+    <p>You have the right to access, correct, delete, restrict processing, data portability, and withdraw consent. Contact <a href="mailto:admin@dkma.online">admin@dkma.online</a>.</p>
+    <h3>6.3 Australian Privacy Act</h3>
+    <p>Australian residents have rights under the Privacy Act 1988 (Cth) to access and correct personal information.</p>
+    <h3>6.4 California Privacy Rights (CCPA)</h3>
+    <p>California residents have the right to know what personal information is collected and request deletion. We do not sell personal information.</p>
+    <h2>7. Children's Privacy</h2>
+    <p>Tapin is not intended for children under 13. We do not knowingly collect information from children. Contact <a href="mailto:admin@dkma.online">admin@dkma.online</a> if you believe a child has provided us information.</p>
+    <h2>8. Third-Party Services</h2>
+    <ul><li><strong>Apple:</strong> <a href="https://www.apple.com/legal/privacy/" target="_blank">apple.com/legal/privacy</a></li><li><strong>Supabase:</strong> <a href="https://supabase.com/privacy" target="_blank">supabase.com/privacy</a></li><li><strong>Firebase:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li><li><strong>RevenueCat:</strong> <a href="https://www.revenuecat.com/privacy" target="_blank">revenuecat.com/privacy</a></li><li><strong>OpenAI:</strong> <a href="https://openai.com/policies/privacy-policy" target="_blank">openai.com/policies/privacy-policy</a></li></ul>
+    <h2>9. International Data Transfers</h2>
+    <p>Your information may be transferred to and processed in countries other than your own. We take appropriate safeguards to ensure protection.</p>
+    <h2>10. Changes to This Privacy Policy</h2>
+    <p>We may update this Privacy Policy from time to time. We will notify you by posting the updated policy within the app and updating the "Last updated" date.</p>
+    <h2>11. Contact Us</h2>
+    <ul><li><strong>Email:</strong> <a href="mailto:admin@dkma.online">admin@dkma.online</a></li><li><strong>Support:</strong> <a href="mailto:admin@dkma.online">admin@dkma.online</a></li></ul>
+    <p>DKMA Applications<br>ABN: 70 693 376 313<br>Australia</p>
+</div>
+<footer class="simple-footer"><p>© 2026 DKMA Applications. All rights reserved.</p><p style="margin-top:0.5rem"><a href="index.html">Home</a> · <a href="pricing.html">Pricing</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="support.html">Support</a></p></footer>
+</body></html>
