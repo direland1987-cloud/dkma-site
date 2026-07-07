@@ -8,7 +8,7 @@
     <meta name="description" content="LOCKDOWN is a turn-based Brazilian Jiu-Jitsu fighting game for iPhone. Chain positions, drain their gas tank, hunt the submission. 5-act story, arcade mode and 11 mini-games. One purchase unlocks everything.">
     <meta property="og:title" content="LOCKDOWN — Turn-Based BJJ Fighter">
     <meta property="og:description" content="No button mashing — every exchange is a decision. Read your opponent, win the scramble, lock in the finish.">
-    <meta property="og:image" content="assets/keyart.jpg">
+    <meta property="og:image" content="assets/shots/title.png">
     <link rel="icon" type="image/png" href="assets/icon.png">
     <link rel="apple-touch-icon" href="assets/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,6 +127,15 @@ nav {
 .red { color: var(--red); }
 .teal { color: var(--teal); }
 
+/* PHONE FRAME */
+.phone {
+    position: relative; width: 300px; max-width: 100%;
+    border-radius: 34px; border: 3px solid #263160;
+    background: #0a0e24; padding: 7px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 55px var(--gold-glow);
+}
+.phone img { display: block; width: 100%; border-radius: 27px; }
+
 /* HERO */
 .hero {
     min-height: 100vh; display: flex; align-items: center;
@@ -167,33 +176,7 @@ nav {
 .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
 .hero-stat h4 { font-family: 'Press Start 2P', monospace; font-size: 1.05rem; color: var(--gold); margin-bottom: 0.5rem; }
 .hero-stat p { font-size: 0.8rem; color: var(--text-muted); }
-
-/* HERO KEY ART */
 .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; }
-.keyart-frame {
-    position: relative; border-radius: 18px; overflow: hidden;
-    border: 3px solid var(--gold); width: 380px; max-width: 100%;
-    aspect-ratio: 1080 / 1780;
-    box-shadow: 0 30px 70px rgba(0,0,0,0.6), 0 0 60px var(--gold-glow);
-}
-.keyart-frame::after {
-    content: ''; position: absolute; inset: 0; z-index: 1;
-    box-shadow: inset 0 0 60px rgba(230,57,70,0.25);
-    pointer-events: none;
-}
-/* Original art carries a corner watermark — size/position crops it out of the frame. */
-.keyart-img {
-    position: absolute; inset: 0;
-    background: url('assets/keyart.jpg') no-repeat 50% 100%;
-    background-size: 122%;
-}
-.keyart-tag {
-    position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-    padding: 2.5rem 1.2rem 1rem;
-    background: linear-gradient(transparent, rgba(5,8,22,0.95));
-    font-family: 'Press Start 2P', monospace; font-size: 0.6rem; color: var(--gold-bright);
-    letter-spacing: 0.5px; text-align: center;
-}
 
 /* FEATURES */
 .features { padding: 6rem 2rem; position: relative; }
@@ -209,40 +192,40 @@ nav {
 .feature-card h3 { font-family: 'Press Start 2P', monospace; font-size: 0.82rem; line-height: 1.5; color: var(--gold); margin-bottom: 0.9rem; }
 .feature-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
 
+/* SCREENSHOTS GALLERY */
+.gallery-section { padding: 6rem 2rem; background: var(--bg-secondary); position: relative; }
+.gallery-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), var(--red), transparent); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 2.5rem 1.5rem; margin-top: 3.5rem; max-width: 1100px; margin-left: auto; margin-right: auto; justify-items: center; }
+.gallery figure { margin: 0; max-width: 260px; text-align: center; }
+.gallery .phone { width: 100%; }
+.gallery figcaption { margin-top: 1.1rem; font-family: 'Press Start 2P', monospace; font-size: 0.58rem; color: var(--gold); letter-spacing: 0.5px; line-height: 1.6; }
+
 /* FIGHTERS */
-.fighters { padding: 6rem 2rem; background: var(--bg-secondary); position: relative; }
-.fighters::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--red), var(--gold), transparent); }
-.fighter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.25rem; margin-top: 3rem; max-width: 1100px; margin-left: auto; margin-right: auto; }
+.fighters { padding: 6rem 2rem; position: relative; }
+.fighter-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 1.25rem; margin-top: 3rem; max-width: 1150px; margin-left: auto; margin-right: auto; }
 .fighter-card {
     background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
-    padding: 1.75rem; transition: all 0.3s; position: relative; overflow: hidden;
+    padding: 1rem 1rem 1.5rem; transition: all 0.3s; text-align: left;
 }
-.fighter-card:hover { border-color: rgba(230,57,70,0.4); transform: translateY(-4px); }
-.fighter-belt { display: inline-block; width: 100%; height: 10px; border-radius: 3px; margin-bottom: 1.1rem; position: relative; }
-.fighter-belt::after { content: ''; position: absolute; right: 14%; top: -2px; bottom: -2px; width: 14px; background: rgba(0,0,0,0.55); border-radius: 2px; }
+.fighter-card:hover { border-color: rgba(230,57,70,0.45); transform: translateY(-4px); }
+.fighter-portrait { width: 100%; aspect-ratio: 1; border-radius: 10px; overflow: hidden; margin-bottom: 1rem; border: 1px solid var(--border); position: relative; }
+.fighter-portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+.fighter-portrait .belt { position: absolute; left: 0; right: 0; bottom: 0; height: 7px; }
 .fighter-card h3 { font-family: 'Anton', sans-serif; font-size: 1.5rem; letter-spacing: 1px; text-transform: uppercase; line-height: 1; margin-bottom: 0.15rem; }
-.fighter-card .handle { color: var(--gold-soft); font-size: 0.82rem; font-weight: 700; margin-bottom: 0.9rem; }
-.fighter-card .arch { display: inline-block; font-family: 'Press Start 2P', monospace; font-size: 0.55rem; letter-spacing: 0.5px; color: var(--red-soft); background: rgba(230,57,70,0.1); padding: 0.35rem 0.6rem; border-radius: 4px; margin-bottom: 1rem; }
-.fighter-card p { color: var(--text-secondary); font-size: 0.88rem; line-height: 1.65; }
-.fighter-card .meta { margin-top: 0.9rem; font-size: 0.75rem; color: var(--text-muted); }
+.fighter-card .handle { color: var(--gold-soft); font-size: 0.82rem; font-weight: 700; margin-bottom: 0.8rem; }
+.fighter-card .arch { display: inline-block; font-family: 'Press Start 2P', monospace; font-size: 0.55rem; letter-spacing: 0.5px; color: var(--red-soft); background: rgba(230,57,70,0.1); padding: 0.35rem 0.6rem; border-radius: 4px; margin-bottom: 0.9rem; }
+.fighter-card p { color: var(--text-secondary); font-size: 0.86rem; line-height: 1.6; }
+.fighter-card .meta { margin-top: 0.8rem; font-size: 0.74rem; color: var(--text-muted); }
 .roster-note { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 2.5rem; }
 
 /* MODES */
-.modes { padding: 6rem 2rem; }
+.modes { padding: 6rem 2rem; background: var(--bg-secondary); }
 .modes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin-top: 3rem; }
 .mode-card { background: var(--bg-card); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 12px; padding: 1.75rem; }
 .mode-card.red { border-left-color: var(--red); }
 .mode-card.teal { border-left-color: var(--teal); }
 .mode-card h3 { font-family: 'Anton', sans-serif; font-size: 1.6rem; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 0.6rem; }
 .mode-card p { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.7; }
-
-/* PRIVACY STRIP */
-.privacy-strip { padding: 5rem 2rem; text-align: center; background: var(--bg-secondary); }
-.privacy-strip-inner { max-width: 640px; margin: 0 auto; padding: 2.5rem 2rem; background: rgba(6,214,160,0.04); border: 1px solid rgba(6,214,160,0.25); border-radius: 16px; }
-.privacy-strip .section-label { color: var(--teal); text-shadow: 0 0 14px var(--teal-glow); }
-.privacy-strip h2 { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem,3vw,2.2rem); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.9rem; }
-.privacy-strip p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.25rem; }
-.privacy-strip a { color: var(--teal); text-decoration: none; font-weight: 700; }
 
 /* BOTTOM CTA */
 .bottom-cta { padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
@@ -265,7 +248,6 @@ nav {
     .hero-ctas { justify-content: center; }
     .hero-visual { order: -1; }
     .hero-stats { justify-content: center; }
-    .keyart-frame { max-width: 300px; }
     .nav-links { display: none; }
     .nav-links.active {
         display: flex; flex-direction: column;
@@ -293,8 +275,8 @@ nav {
     <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
     <ul class="nav-links">
         <li><a href="#features">Features</a></li>
+        <li><a href="#screens">Screens</a></li>
         <li><a href="#fighters">Fighters</a></li>
-        <li><a href="#modes">Modes</a></li>
         <li><a href="privacy.html">Privacy</a></li>
         <li><a href="support.html">Support</a></li>
     </ul>
@@ -317,9 +299,8 @@ nav {
             </div>
         </div>
         <div class="hero-visual">
-            <div class="keyart-frame">
-                <div class="keyart-img" role="img" aria-label="LOCKDOWN fighters face off"></div>
-                <div class="keyart-tag">READ · REACT · FINISH</div>
+            <div class="phone">
+                <img src="assets/shots/fight.png" alt="LOCKDOWN turn-based fight screen — Marcus vs Adele" width="430" height="932">
             </div>
         </div>
     </div>
@@ -361,8 +342,34 @@ nav {
             <div class="feature-card">
                 <div class="feature-icon">📱</div>
                 <h3>No Strings</h3>
-                <p>Fully playable offline. No account, no ads, no subscription — and no data ever leaves your device. One optional purchase unlocks the whole game.</p>
+                <p>Fully playable offline. No account and no subscription — one optional purchase unlocks the whole game. Restore it on any device with your Apple ID.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery-section" id="screens">
+    <div class="container" style="text-align:center;">
+        <div class="section-label">SEE IT IN ACTION</div>
+        <h2 class="section-title">STRAIGHT FROM <span class="gold">THE MATS</span></h2>
+        <p style="color:var(--text-secondary);max-width:560px;margin:0 auto;">Real screens from the game — pixel-and-illustration art, turn-based combat and a full career.</p>
+        <div class="gallery">
+            <figure>
+                <div class="phone"><img src="assets/shots/title.png" loading="lazy" alt="LOCKDOWN title screen" width="430" height="932"></div>
+                <figcaption>TITLE SCREEN</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="assets/shots/menu.png" loading="lazy" alt="LOCKDOWN main menu — Campaign, Arcade, Training, Mini-Games" width="430" height="932"></div>
+                <figcaption>MAIN MENU</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="assets/shots/select.png" loading="lazy" alt="LOCKDOWN choose fighter screen" width="430" height="932"></div>
+                <figcaption>CHOOSE FIGHTER</figcaption>
+            </figure>
+            <figure>
+                <div class="phone"><img src="assets/shots/loadout.png" loading="lazy" alt="LOCKDOWN move loadout screen" width="430" height="932"></div>
+                <figcaption>BUILD YOUR LOADOUT</figcaption>
+            </figure>
         </div>
     </div>
 </section>
@@ -374,7 +381,7 @@ nav {
         <p style="color:var(--text-secondary);max-width:580px;margin:0 auto;">Every fighter has their own stats, style and signature techniques. Win the story campaign to add them to your roster.</p>
         <div class="fighter-grid">
             <div class="fighter-card">
-                <span class="fighter-belt" style="background:#5a3a1a;"></span>
+                <div class="fighter-portrait"><img src="assets/fighters/marcus.webp" loading="lazy" alt="Marcus"><span class="belt" style="background:#5a3a1a;"></span></div>
                 <h3>Marcus</h3>
                 <div class="handle">"The Bull" Reyes</div>
                 <span class="arch">THE JUGGERNAUT</span>
@@ -382,7 +389,7 @@ nav {
                 <div class="meta">🇺🇸 American · Brown belt</div>
             </div>
             <div class="fighter-card">
-                <span class="fighter-belt" style="background:#7b2ff7;"></span>
+                <div class="fighter-portrait"><img src="assets/fighters/adele.webp" loading="lazy" alt="Adele"><span class="belt" style="background:#7b2ff7;"></span></div>
                 <h3>Adele</h3>
                 <div class="handle">Fiorevar</div>
                 <span class="arch">THE SURGEON</span>
@@ -390,7 +397,7 @@ nav {
                 <div class="meta">🇳🇴 Norwegian · Purple belt</div>
             </div>
             <div class="fighter-card">
-                <span class="fighter-belt" style="background:#5a3a1a;"></span>
+                <div class="fighter-portrait"><img src="assets/fighters/yuki.webp" loading="lazy" alt="Yuki"><span class="belt" style="background:#5a3a1a;"></span></div>
                 <h3>Yuki</h3>
                 <div class="handle">"Spider" Tanaka</div>
                 <span class="arch">THE SPIDER</span>
@@ -398,7 +405,7 @@ nav {
                 <div class="meta">🇯🇵 Japanese · Brown belt</div>
             </div>
             <div class="fighter-card">
-                <span class="fighter-belt" style="background:#2563eb;"></span>
+                <div class="fighter-portrait"><img src="assets/fighters/rusty.webp" loading="lazy" alt="Rusty"><span class="belt" style="background:#2563eb;"></span></div>
                 <h3>Rusty</h3>
                 <div class="handle">Jones</div>
                 <span class="arch">THE TRICKSTER</span>
@@ -406,23 +413,15 @@ nav {
                 <div class="meta">🇦🇺 Australian · Blue belt</div>
             </div>
             <div class="fighter-card">
-                <span class="fighter-belt" style="background:#7b2ff7;"></span>
-                <h3>Luta</h3>
-                <div class="handle">Duarte</div>
-                <span class="arch">THE WARRIOR</span>
-                <p>Aggressive guard, sweeps and physical dominance. Brazilian to the core — comes to war from the first grip to the final buzzer.</p>
-                <div class="meta">🇧🇷 Brazilian · Purple belt</div>
-            </div>
-            <div class="fighter-card">
-                <span class="fighter-belt" style="background:#4a3520;"></span>
+                <div class="fighter-portrait"><img src="assets/fighters/mahmedov.webp" loading="lazy" alt="Mahmedov"><span class="belt" style="background:#4a3520;"></span></div>
                 <h3>Mahmedov</h3>
-                <div class="handle">The Stone Wall</div>
+                <div class="handle">Sambo &amp; Wrestling</div>
                 <span class="arch">THE STONE WALL</span>
                 <p>Wrestling pressure, chain wrestling and top-control smother. A lifetime of sambo and wrestling that gasses you before it finishes you.</p>
                 <div class="meta">🇷🇺 Dagestani · Brown belt</div>
             </div>
         </div>
-        <p class="roster-note">…and more challengers waiting through the 5-act campaign.</p>
+        <p class="roster-note">…plus Luta, Cole, Connor, Mei and more challengers unlocking through the 5-act campaign.</p>
     </div>
 </section>
 
@@ -444,15 +443,6 @@ nav {
                 <p>Comedy training challenges from Run to the Gym to the Belt Whipping Gauntlet, plus retro side-scroller training runs — all with high-score leaderboards.</p>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="privacy-strip">
-    <div class="privacy-strip-inner">
-        <div class="section-label">DATA NOT COLLECTED</div>
-        <h2>NO ACCOUNTS. NO ADS. <span class="teal">NO TRACKING.</span></h2>
-        <p>LOCKDOWN has no accounts, no analytics and no ads. It never transmits gameplay data — the game runs entirely on your device and your progress never leaves it. Purchases are processed entirely by Apple.</p>
-        <a href="privacy.html">Read the full Privacy Policy →</a>
     </div>
 </section>
 
